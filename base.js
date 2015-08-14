@@ -21,7 +21,7 @@ Dandy.Feud.search = function (searchTerm, maxResult) {
 	var alphanumeric = new RegExp(/^[a-z0-9\s]+$/i);
 	var promise = new Promise(function(resolve, reject) {
 		$.ajax({
-			url: "http://suggestqueries.google.com/complete/search?client=chrome&q=" + encodeURIComponent(searchTerm),
+			url: "https://suggestqueries.google.com/complete/search?client=chrome&q=" + encodeURIComponent(searchTerm),
 			dataType: "jsonp"
 		}).done(function(data) {
 			var rawResults = data[1].slice(0, maxResult);
